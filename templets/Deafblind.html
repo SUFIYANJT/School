@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Kerala School for the Blind{% endblock %}
+{% block head %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'css/deafblind.css' %}">
+{% endblock %}
+
+{% block content %}
+    <h1 style="text-align: center; color: #4a4a4a; font-family: Arial, sans-serif;">Deafblind</h1>
+    <div style="max-width: 800px; margin: 0 auto; padding: 20px; background-color: #f9f9f9; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+        <p style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+            The Deafblind Section at Kerala School for the Blind is the only institution in Kerala that serves children with combined vision and hearing impairments. Deafblindness presents unique challenges in communication and mobility, which we address through personalized care, specialized learning tools, and therapy.
+        </p>
+
+        <h2 style="color: #007BFF; font-family: Arial, sans-serif;">We offer:</h2>
+        
+        <ul style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; padding-left: 20px;">
+            <li>Personalized Communication: Tactile signing, Braille, and assistive technologies to help students communicate effectively.</li>
+            <li>Mobility Training: Teaching independence using sensory techniques and mobility aids.</li>
+            <li>Sensory Learning: Engaging students through tactile, auditory, and sensory exploration.</li>
+            <li>Family Support: Workshops and counseling for families to support their children at home.</li>
+        </ul>
+        
+        <p style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+            Our goal is to empower each student to overcome their challenges and achieve independence.
+        </p>
+    </div>
+{% endblock %}

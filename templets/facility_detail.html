@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Facility Details{% endblock %}
+
+{% block head %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'css/facility_detail.css' %}">
+{% endblock %}
+
+{% block content %}
+{% if facility.dep_fac == "Deafblind" %}
+    <script>
+        window.location.href = "{% url 'deafbind' %}";
+    </script>
+{% else %}
+    <h1>{{ facility.dep_fac }}</h1>
+
+    <div class="facility-images">
+        {% for image in images %}
+            <img src="{{ image.image.url }}" alt="{{ facility.dep_fac }}">
+        {% endfor %}
+    </div>
+    
+    <div class="facility-images">
+        <p>{{ facility.dep_dic }}</p>
+    </div>
+    <!-- Add other details specific to the facility here -->
+{% endif %}
+{% endblock %}

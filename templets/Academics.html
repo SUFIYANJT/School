@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About Us{% endblock %}
+
+{% block head %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'css/Academics.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="card-container-teachers">
+    {% for f in Photogallery %}
+    <div class="card-teachers">
+        <div class="profile-pic">
+        <img src="{{ f.school_image.url }}" >
+    </div>
+        <h4 style="align-items: center;">{{ f.image_dis }}</h4> 
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

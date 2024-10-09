@@ -1,0 +1,56 @@
+.card-container-teachers {
+    display: flex; 
+    gap: 20px; 
+    justify-content: center;
+    padding: 20px;
+    flex-wrap: wrap; /* Allow cards to wrap to the next line on smaller screens */
+}
+
+.card-teachers {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 90%; /* Adjust width for responsiveness */
+    max-width: 300px; /* Maximum width to maintain design consistency */
+    height: auto; /* Allow height to adjust based on content */
+    padding: 20px;
+    margin: 10px; /* Add some margin for spacing on smaller screens */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-teachers:hover {
+    transform: scale(1.05); /* Scale up the card on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.profile-pic {
+    width: 80%; /* Increase width */
+    max-width: 200%; /* Increased maximum size */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 auto 15px;
+    overflow: hidden;
+    border-radius: 5%;
+    border: 0px solid #ddd;
+}
+
+.profile-pic img {
+    width: 100%; /* Make image take full width of the container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5%; /* Circular image */
+    margin-bottom: 10px; /* Space between the image and text */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+    .card-teachers {
+        width: 100%; /* Full width on small screens */
+        padding: 15px; /* Adjust padding */
+    }
+    
+    .profile-pic {
+        width: 90%; /* Larger profile picture on smaller screens */
+        max-width: 180px; /* Adjust max-width for smaller screens */
+    }
+}

@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block head %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'css/abus.css' %}">
+       <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-analytics.js";
+
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyCjVROAC7OJ0HgAgOdil5cpRSLS7bTZ3Hs",
+        authDomain: "school-22031.firebaseapp.com",
+        projectId: "school-22031",
+        storageBucket: "school-22031.appspot.com",
+        messagingSenderId: "832920744913",
+        appId: "1:832920744913:web:5561e381fba8deeed166f0",
+        measurementId: "G-7566XK7EHK"
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="content">
+        <h1 style="text-align: center;">Kerala School for Blind , Valikapata</h1>
+        
+            <div class="image-container" style="display: flex; justify-content: center; align-items: center;">
+                <iframe src="https://www.youtube.com/embed/4wh7qwUqHrs" 
+                title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+                clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen></iframe>
+
+            </div>
+        </div>
+        <p>
+            The Kerala School for the Blind, established in 1955, is a pioneering institution dedicated to the education and empowerment of visually challenged children. Located in Vallikkappatta, Malappuram district, Kerala, we are the first government-aided special school of our kind in the state. Founded by the late Mr. Chandrasekharan, a retired military officer, the school has since been managed by a dedicated team committed to continuing his legacy of excellence in education for the blind.
+            Our institution serves over 70 children, ranging from pre-primary to 7th standard, with a focus on not only providing high-quality education but also fostering holistic development. We take pride in our specialized section for deaf-blind children, the only one of its kind in Kerala, offering tailored support to meet their unique needs.
+            At the Kerala School for the Blind, our goal extends beyond academic achievement; we aim to nurture every child’s potential, encouraging them to pursue their aspirations and build a successful future. 
+        </p>
+    </div>
+</div>
+<div class="card-container">
+    <div class="card">
+        <img src="{% static 'images/MISSION.png' %}"  alt="School Image 1">
+        <div class="card-content">
+            <h2 style="text-align: center;">Our Mission</h2>
+            <p>
+                Our mission at the Kerala School for the Blind is to provide exceptional educational opportunities for visually challenged children, ensuring they receive comprehensive and inclusive support. We are committed to fostering an environment that promotes all-round development, equipping our students with the skills, confidence, and independence necessary to excel in their chosen paths. By offering a range of specialized facilities and individualized care, we strive to empower each child to achieve their highest potential and lead a fulfilling life.
+            </p>
+        </div>
+    </div>
+    
+    <div class="card">
+        <img src="{% static 'images/vission.png' %}" alt="School Image 2">
+        <div class="card-content">
+            <h2 style="text-align: center;">Our Vision</h2>
+            <p>
+                Our vision is to be a leading institution in the field of special education, recognized for our unwavering dedication to the holistic development of visually challenged and deaf-blind children. We aspire to create an inclusive society where every child, regardless of their disability, has access to quality education and opportunities to thrive. By continuously advancing our educational practices and expanding our support services, we aim to inspire and enable our students to realize their dreams and contribute meaningfully to the world around them.
+            </p>
+        </div>
+    </div>
+</div>
+<div class="Our staff">
+    <h1 style="text-align: center;">Our Staff</h1>
+</div>
+<div class="Staff-card-container">
+    <div class="Staff_card">
+        
+    </div>
+</div>
+{% for f in principal %}
+<div class="profile-card">
+    <div class="profile-pic">
+        <img src="{{f.principal_image.url }}" >
+    </div>
+    <div class="profile-info">
+        <h2 class="name">{{ f.principal_name }}</h2>
+        <p class="title">{{ f.principal_possition }}</p>
+    </div>
+</div>
+{% endfor %}
+<div class="Our staff">
+    <h2 style="text-align: center;color: brown;"> Teaching Staff</h2>
+</div>
+<div class="Staff-card-container">
+    <div class="Staff_card">
+        
+    </div>
+</div>
+<div class="card-container-teachers">
+    {% for f in staffDetails %}
+    <div class="card-teachers">
+        <div class="profile-pic">
+            <img src="{{ f.staff_image.url }}" alt="{{ f.staff_name }}">
+        </div>
+        <h3>{{ f.staff_name }}</h3>
+        <p>{{ f.staff_possition }}</p>
+    </div>
+    {% endfor %}
+</div>
+
+
+{% endblock %}

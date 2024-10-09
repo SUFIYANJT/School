@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <header>
+        <div class="navbar-brand"> <img src="{% static 'images/logo.jpeg' %}" alt="School Logo" style="height: 50px; margin-right: 10px;">Kerala School for the Blind</div>
+        <button class="navbar-toggle" onclick="toggleNavbar()">
+            <span class="material-symbols-outlined">menu</span>
+        </button>
+        <nav id="navbar">
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About Us</a></li>
+                <li><a href="{% url 'deafbind' %}">Deafblind</a></li>
+                <li><a href="{% url 'academics' %}">Photo Gallery</a></li>
+                <li><a href="{% url 'admission' %}">Video Gallery</a></li>
+               
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <hr>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Get In Touch</h3>
+                <p>We're always here to help you</p>
+                <img src="{% static 'images/footerimg.png' %}" alt="Get In Touch Image" style="width: 100px;">
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <a href="{% url 'home'%}">Home</a>
+                <a href="{% url 'about'%}">The School</a>
+                <a href="{% url 'admission'%}">Gallery</a>
+                <a href="{% url 'academics'%}">Photo Gallery</a>
+                <a href="#">Facilities</a>
+                <a href="#">Information Center</a>
+                <a href="#">Contact Us</a>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <div class="social-icons">
+                    <div class="contact-info">
+                        <p><img src="{% static 'images/images-removebg-preview.png' %}"> Vallikapatya, Malapuram, Kerala</p>
+                        <p><img src="{% static 'images/phno-removebg-preview.png' %}">+91 7012061825</p>
+                        <p><img src="{% static 'images/mail-removebg-preview(1).png' %}"> ksbmankada@gmail.com</p>
+                    </div>
+                    <a href="#"><img src="{% static 'images/des-removebg-preview.png' %}" alt="Facebook">Facebook</a>
+                    <a href="#"><img src="{% static 'images/Untitled-removebg-preview.png' %}" alt="YouTube">YouTube</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>All rights reserved © 2024 Kerala School for Blind, Vallikapatya</p>
+        </div>
+    </footer>
+    <script>
+        function toggleNavbar() {
+            const navbar = document.getElementById('navbar');
+            navbar.classList.toggle('in');
+        }
+    </script>
+</body>
+</html>

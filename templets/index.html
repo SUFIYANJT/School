@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block head %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="rectangle">
+    <div class="left-section">
+        {% for f in home %}
+        <p style="font-size: 2em;">{{ f.dep_dis }}</p>
+        {% endfor %}
+    </div>
+    <div class="right-section">
+        <div class="rounded-div"> 
+            <div class="carousel">
+                <div class="slides">
+                    {% for slide in slider_images %}
+                    <div class="slide {% if forloop.first %}active{% endif %}">
+                        <img src="{{ slide.image.url }}" alt="{{ slide.alt_text }}">
+                        <div class="caption">
+                            <!-- Optionally add captions here -->
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="controls">
+                    <span class="prev">&#10094;</span>
+                    <span class="next">&#10095;</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+<!-- Event Ticker Section -->
+
+<div class="rectangle1">
+    <h2 class="section-title">Latest Events</h2>
+    <div class="left-section1">
+        <div class="eventscard">
+            {% for e in  news|slice:":2" %}
+            <img src="{{ e.image.url }}" alt="{{ e.tite }}">
+            <div class="eventscard-body">
+                <h2 class="eventscard-title">{{ e.news_tite }}</h2>
+                <p class="eventscard-text">{{ e.news_description }}</p>
+                <button class="eventscard-button">Learn More</button>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="right-section1">
+        <h2 class="section-title">Latest News</h2>
+        <div class="event-ticker-container">
+            <div class="event-ticker">
+                {% for e in Events %}
+                <div class="event">
+                    <p>{{ e.e_title }}: {{ e.e_dis }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<hr>
+    <div class="h1-facali" style="margin-top: 5%;">
+        <h2 style="text-align: center;">Our Facilities</h2>
+    </div>
+    <section class="facilities">
+        {% for f in facility %}
+            <div class="facility {{ f.is_full_width|yesno:"full-width,half-width" }}">
+                <a href="{% url 'facility_detail' f.id %}" style="text-decoration: none; color: black;">{{ f.dep_fac }}</a>
+            </div>
+        {% endfor %}
+    </section>
+</div>
+<hr>
+</div class="principal">
+<div class="principal-voice">
+    <div class="image-container">
+        <div class="text-container">
+        <h2>Manager's Voice</h2>
+        </div>
+        <img src="{% static 'images/Manger.jpeg' %}" >
+    </div>
+
+    <div class="text-container">
+       
+        <p> policy focuses on providing quality education. It is aimed at deepening the authentic spiritual formation of all our students, emphasizing the holistic and fuller development that meets the challenges of modern culture and society. The policy advocates the equally essential social and societal transformation as a major goal and mission of our education.</p>
+        <p class="signature"><br>Manager</p>
+    </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.querySelector('.prev');
+        const nextBtn = document.querySelector('.next');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+            document.querySelector('.slides').style.transform = `translateX(-${index * 100}%)`;
+        }
+
+        prevBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        });
+
+        showSlide(currentSlide); // Initialize the first slide
+
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }, 3000); // Change slide every 3 seconds
+    });
+</script>
+{% endblock %}

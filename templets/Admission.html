@@ -1,0 +1,30 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About Us{% endblock %}
+
+{% block head %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'css/admissions.css' %}">
+{% endblock %}
+
+{% block content %}
+<h1 style="text-align: center;">Videos</h1>
+<div class="gallery-container">
+    {% for f in Videogallery %}
+    <div class="video-item">
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ f.video_url }}" 
+            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+            clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen></iframe>
+        </div>
+        <div class="video-description">
+            <h2>{{ f.video_description }}</h2>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
