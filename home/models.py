@@ -18,7 +18,7 @@ class Facility(models.Model):
     dep_dic = models.TextField(blank=True, null=True)
 
     def __str__(self):
-        return self.dep_fac
+       return self.dep_fac or 'Unnamed Facility'
 
 class FacilityImage(models.Model):
     facility = models.ForeignKey(Facility, on_delete=models.CASCADE, related_name='images')
@@ -54,10 +54,10 @@ class Videogallery(models.Model):
     video_url=models.TextField()
     video_description=models.TextField()
     def __str__(self):
-     return self.video_description
+        return self.video_description or 'Video without Description'
 class news(models.Model):
     news_tite=models.TextField()
     image = models.ImageField(upload_to='event_images/',default='event_images/default.jpg', blank=True, null=True)
     news_description=models.TextField()
     def _str_self():
-        return self.news_tite
+        return self.news_title or 'News without Title' 
