@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-c8nj%g1bry5p7waeqg(8v!#w$aqx-^qr-o$xv0t)z*k75ef2=k
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['your-domain.com', '13.236.187.191', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['your-domain.com', '13.236.167.199', 'localhost', '127.0.0.1']
 
 # Add trusted origins for CSRF
 CSRF_TRUSTED_ORIGINS = [
@@ -111,11 +111,11 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
-]
+#STATICFILES_DIRS = [
+#    os.path.join(BASE_DIR, 'static')
+#]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
