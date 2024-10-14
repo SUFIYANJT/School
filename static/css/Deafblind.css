@@ -1,0 +1,29 @@
+h1 {
+    text-align: center;
+    color: #4a4a4a;
+    font-family: Arial, sans-serif;
+}
+
+.deafblind-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #641313;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+p, ul {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+h2 {
+    color: #007BFF;
+    font-family: Arial, sans-serif;
+}
+
+ul {
+    padding-left: 20px;
+}
