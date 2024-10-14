@@ -19,8 +19,6 @@ bin/
 .DS_Store
 
 # Django stuff:
-media/
-uploads/
 pyvenv.cfg
 **/migrations/
 staticfiles/
