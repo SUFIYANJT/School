@@ -10,9 +10,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-c8nj%g1bry5p7waeqg(8v!#w$aqx-^qr-o$xv0t)z*k75ef2=k'
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['your-domain.com', '13.236.167.199', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['ksbvallikkapatta.org', 'www.ksbvallikkapatta.org', 'localhost', '127.0.0.1']
 
 # Add trusted origins for CSRF
 CSRF_TRUSTED_ORIGINS = [
