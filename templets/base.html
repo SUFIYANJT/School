@@ -11,7 +11,10 @@
 </head>
 <body>
     <header>
-        <div class="navbar-brand"> <img src="{% static 'images/logo.jpeg' %}" alt="School Logo" style="height: 65px; margin-right: 10px;">Kerala School for the Blind</div>
+        <div class="navbar-brand" style="display: flex; align-items: center;">
+            <img src="{% static 'images/logo.jpeg' %}" alt="School Logo" style="height: 65px; margin-right: 10px;">
+            <span style="font-size: 1.3rem; font-weight: bold;">Kerala School for the Blind</span>
+        </div>
         <button class="navbar-toggle" onclick="toggleNavbar()">
             <span class="material-symbols-outlined">menu</span>
         </button>
@@ -22,11 +25,10 @@
                 <li><a href="{% url 'deafbind' %}">Deafblind</a></li>
                 <li><a href="{% url 'academics' %}">Photo Gallery</a></li>
                 <li><a href="{% url 'admission' %}">Video Gallery</a></li>
-               
             </ul>
         </nav>
     </header>
-
+     
     <main>
         {% block content %}
         {% endblock %}

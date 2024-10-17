@@ -12,7 +12,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-c8nj%g1bry5p7waeqg(8v!#w$aqx-^qr-o$xv0t)z*k75ef2=k'
 DEBUG = True
 
-ALLOWED_HOSTS = ['ksbvallikkapatta.org', 'www.ksbvallikkapatta.org', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['ksbvallikkapatta.org', 'www.ksbvallikkapatta.org', 'localhost', '127.0.0.1', '192.168.1.5']
 
 # Add trusted origins for CSRF
 CSRF_TRUSTED_ORIGINS = [

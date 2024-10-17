@@ -20,13 +20,17 @@ h1, h2, h3, h4, h5, h6 {
 /* Rectangle Section */
 .rectangle {
     display: flex;
-    width: 100%;
+    width: 98vw;
     height: 70vh;
     border: 1px solid #000;
     background-color: #FFF1D4; /* Card background color */
     border-radius: 10px;
     overflow: hidden;
-    margin-bottom: 40px;
+    text-align: center;
+    align-items: center;
+    margin: 20px auto;
+    margin-bottom: 10vh;
+
     
     
 }
