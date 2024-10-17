@@ -21,7 +21,7 @@ h1, h2, h3, h4, h5, h6 {
 .rectangle {
     display: flex;
     width: 98vw;
-    height: 70vh;
+    height: auto;
     border: 1px solid #000;
     background-color: #FFF1D4; /* Card background color */
     border-radius: 10px;
@@ -30,9 +30,6 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     margin: 20px auto;
     margin-bottom: 10vh;
-
-    
-    
 }
 
 .left-section,
@@ -209,22 +206,21 @@ h1, h2, h3, h4, h5, h6 {
 /* Event Ticker Section */
 .rectangle1 {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 100%;
+    width: 98vw;
     height: auto;
     border: 1px solid #000;
-    background-color: #fff;
     border-radius: 10px;
     overflow: hidden;
-    margin-bottom: 40px;
-    padding: 20px;
-}
+    text-align: center;
+    align-items: center;
+    margin: 20px auto;
+    margin-bottom: 10vh;
+ }
 
 .left-section1,
 .right-section1 {
     flex: 1;
-    padding: 20px;
+    padding: 1vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -233,7 +229,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .event-ticker-container {
-    width: 100%;
     background-color: #FFF;
     border-radius: 10px;
     overflow: hidden;
